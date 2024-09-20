@@ -1,23 +1,35 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../public/assets/images/puzzle1.jpeg');
+    background-position: center; /* Adjust position */
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.app {
+    text-align: center;
+    width: 100%;
+}
+
+/* Splash Screen */
 #splashScreen {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;     /* Ensure image covers the screen */
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image:"C:\Users\admin\Downloads\game\nature.jpg";
-    background-size:cover;
-     /* Prevents image from repeating */
-    color: white; /* Adjust text color for better visibility */
+    color: white;
     text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-
 }
-
 #splashScreen h1 {
     font-size: 36px;
     margin-bottom: 20px;
-    color:#333
+    color: #333;
 }
 
 #splashScreen button {
@@ -33,28 +45,13 @@
 #splashScreen button:hover {
     background-color: #45a049;
 }
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
-    
-}
 
+/* Game Container */
 #gameContainer {
-    text-align: center;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 5px;
+    border-radius: 2px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#wordDisplay {
-    font-size: 24px;
-    margin-bottom: 10px;
 }
 
 #puzzleImage {
@@ -64,42 +61,32 @@ body {
 
 #puzzle {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    justify-content: center;
     margin-top: 20px;
 }
 
 .cell {
     width: 100px;
     height: 100px;
+    background-color: #e0e0e0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #333;
-    cursor: pointer;
     font-size: 24px;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s;
 }
 
-.selected {
-    background-color: #ffeb3b;
+.cell.selected {
+    background-color: yellow;
 }
 
-.found {
-    background-color: #4caf50;
+.cell.found {
+    background-color: green;
     color: white;
-}
-.cell.wrong
-{
-    background-color: red;
-    color : white;
-}
-#feedback
-{
-    margin-top: 20px;
-    font-size: 18px;
-    text-align: center;
-    color : hwb(32 white black);
 }
 
 #message {
@@ -120,5 +107,10 @@ button {
 }
 
 button:hover {
-    background-color:#45a049;
+    background-color: #45a049;
 }
+.cell.wrong {
+    background-color: red;
+    color: white;
+  }
+  
